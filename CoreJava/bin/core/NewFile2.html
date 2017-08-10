@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+body {
+	padding: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+.tabs-menu {
+	height: 20px;
+	clear: both;
+}
+
+.tabs-menu li {
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-right: 10px;
+	background-color: #ccc;
+	border-top: 1px solid #d4d4d1;
+	border-right: 1px solid #d4d4d1;
+	border-left: 1px solid #d4d4d1;
+	list-style: none;
+}
+
+.tabs-menu li.current {
+	position: relative;
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+	z-index: 5;
+}
+
+.tabs-menu li a {
+	padding: 10px;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+}
+
+.tabs-menu .current a {
+	color: #2e7da3;
+}
+
+.tab {
+	border: 1px solid #d4d4d1;
+	background-color: #fff;
+	float: left;
+	margin-bottom: 20px;
+	width: auto;
+}
+
+.tab-content {
+	width: 660px;
+	padding: 20px;
+	display: none;
+}
+
+#tab-1 {
+	display: block;
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".tabs-menu a").click(function(event) {
+			event.preventDefault();
+			$(this).parent().addClass("current");
+			$(this).parent().siblings().removeClass("current");
+			var tab = $(this).attr("href");
+			$(".tab-content").not(tab).css("display", "none");
+			$(tab).fadeIn();
+		});
+	});
+</script>
+</head>
+<body>
+
+
+	<div class="panel-body">
+		<div id="tabs-container">
+			<ul class="tabs-menu">
+				<li class="current"><a href="#tab-1">Alias management</a></li>
+				<li><a href="#tab-2">Synchronization Management</a></li>
+			</ul>
+		</div>
+		<div class="tab">
+			<div id="tab-1" class="tab-content">
+				<div class="form-horizontal col-md-8" role="form" id="aliasNameForm"
+					style="height: 350px; overflow-y: scroll;">
+					<div class="form-group">
+						<label class="col-sm-2 control-label"><b>Waspmote</b></label> <label
+							class="col-sm-2 control-label"><b>Sensor</b></label><label
+							class="col-sm-2 control-label"><b>Name</b></label> <label
+							class="col-sm-2 control-label"><b>Location</b></label>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote1"></label> <label
+							class="col-sm-2 control-label" id="sensor1" value="ACC">Accelerometer</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name1"
+								placeholder="Name" value="fhgtgjh">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location1"
+								placeholder="Location" value="uyikjygu">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote2"></label> <label
+							class="col-sm-2 control-label" id="sensor2" value="BAT">Battery</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name2"
+								placeholder="Name" value="kmjhlh">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location2"
+								placeholder="Location" value="uoipiup">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote3"></label> <label
+							class="col-sm-2 control-label" id="sensor3" value="C">C</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name3"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location3"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote4"></label> <label
+							class="col-sm-2 control-label" id="sensor4" value="MAC">MAC
+							Address</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name4"
+								placeholder="Name" value="pipo">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location4"
+								placeholder="Location" value="i[">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote5">node_id</label>
+						<label class="col-sm-2 control-label" id="sensor5" value="ACC">Accelerometer</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name5"
+								placeholder="Name" value="hgkhi">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location5"
+								placeholder="Location" value="likioliuo">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote6">node_id</label>
+						<label class="col-sm-2 control-label" id="sensor6" value="BAT">Battery</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name6"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location6"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote7">node_id</label>
+						<label class="col-sm-2 control-label" id="sensor7" value="MAC">MAC
+							Address</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name7"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location7"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote8">Waspmote123</label>
+						<label class="col-sm-2 control-label" id="sensor8" value="ACC">Accelerometer</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name8"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location8"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote9">Waspmote123</label>
+						<label class="col-sm-2 control-label" id="sensor9" value="BAT">Battery</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name9"
+								placeholder="Name" value="ghgiuioi">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location9"
+								placeholder="Location" value="uoiup">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote10">Waspmote123</label>
+						<label class="col-sm-2 control-label" id="sensor10" value="C">C</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name10"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location10"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote11">Waspmote123</label>
+						<label class="col-sm-2 control-label" id="sensor11" value="CC">CC</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name11"
+								placeholder="Name" value="">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location11"
+								placeholder="Location" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" id="waspmote12">Waspmote123</label>
+						<label class="col-sm-2 control-label" id="sensor12" value="MAC">MAC
+							Address</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="name12"
+								placeholder="Name" value="hytutio">
+						</div>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="location12"
+								placeholder="Location" value="ghyuiuy7i">
+						</div>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div align="center" class="col-md-8">
+					<button type="submit" class="btn btn-default" onclick="saveAlias()"
+						id="aliasNameFormUpdate">Update</button>
+					<label class="control-label" id="status"></label>
+				</div>
+			</div>
+			<div id="tab-2" class="tab-content">
+				<form class="form-inline">
+					<div>
+						<b><h3>Synchronization management</h3></b>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail2">Updated frequency</label> <input
+							type="text" class="form-control" id="interval"
+							placeholder="Frequency" style="width: 100"><select
+							class="form-control" id="timeunit"><option value="sec"
+								selected="">Seconds</option>
+							<option value="min">Minutes</option>
+							<option value="hr">Hours</option></select>
+						<button type="button" class="btn btn-primary"
+							onclick="setSyncInterval()">Update</button>
+					</div>
+				</form>
+				<form class="form-inline">
+					<div class="form-group">
+						<select class="form-control" id="waspmoteid"><option
+								value="" disabled="" selected="">Select Waspmote</option></select> <select
+							class="form-control" id="sensorid"><option value=""
+								disabled="" selected="">Select Sensor</option></select><select
+							id="operation" class="form-control"><option value="1">Sum</option>
+							<option value="2">Average</option>
+							<option value="3">Max</option>
+							<option value="4">Min</option>
+							<option value="5">Equals</option>
+							<option value="6">Greater than</option>
+							<option value="7">Less than</option>
+							<option value="8">Between</option></select><input type="text"
+							class="form-control" id="sensorvalue" placeholder="Sensor Value"
+							style="width: auto">&nbsp;&nbsp;
+						<button type="button" class="btn btn-primary"
+							onclick="addOperation()">Add</button>
+					</div>
+				</form>
+				<form class="form-inline">
+					<label class="control-label" id="status"></label>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

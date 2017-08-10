@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Messages Listening....!</title>
+</head>
+<body>
+<h3>Messages Listening....!</h3>
+<p id="result"></p>
+<script type="text/javascript">
+//var url = "rest/broadcast";
+//var url = "rest/jsonbroadcast";
+//var url ="http://localhost:1111/SSEKafkaConsumer/rest/jsonbroadcast"
+//var url ="http://httpsse.invent.symphoni.io/ssebroadcast/";
+//var url ="https://sse.invent.symphoni.io/ssebroadcast/";
+//var url ="http://localhost:8001/ssebroadcast/";
+var url ="http://localhost:9090/ssebroadcast/";
+//var url = "rest/events";
+//var access_token = decodeURIComponent("bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJtYWRodXN1ZGhhbi5yZWRkeUBzeW5jb21zLmNvbSIsInNjb3BlIjpbImZ1bGwiXSwidGVuYW50SWQiOiIyOTJGRUM3Ni01RjFDLTQ4NkYtODVBNS0wOUQ4ODA5NkYwOTgiLCJleHAiOjE0ODA0Mjg3NjEsImF1dGhvcml0aWVzIjpbIk1hbmFnZXIiXSwianRpIjoiMTNlYTczOWItMWY4NC00MjgwLWEwNjUtM2ZhYjFmZTJmOGU0IiwiY2xpZW50X2lkIjoiY29kZWNsaWVudCJ9.GgHx6BI9tVwVV46U8qEwE4GnuOxaUC-KLDLopikeOY5nyehNaMN1uTEjJSgDMcIHZuRbQMGR2Og2eJ8z4c1otj5y-9Q0kePMSOjlUVVBSIOCzC_T3caqzXZqdjhW99UBIhcQJb2iKEbAH_zJLwmXYH2OKG49RgwhPeL-fL11zEbKhm-NRmrQmkVtuuujaTy6RMA7lOXGb8geem9ZaxotRKgQFChPC7OnVaHcaHm-9plVe79G1_Xap3ydo4I2qcLj0B5bleCkpli6xxaUQ5vbQxgjX6Ws46YNvbIRLk8cFlGQv0FLA89hlF1uNDueIX0IUebqRtoFpW-BkD2Abls-Vg".replace(/\+/gm,"%20"));
+var access_token ="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJzaGFpay5uYWltdWRkaW5Ac3luY29tcy5jb20iLCJzY29wZSI6WyJmdWxsIl0sInRlbmFudElkIjoiMjkyRkVDNzYtNUYxQy00ODZGLTg1QTUtMDlEODgwOTZGMDk4IiwiZXhwIjoxNDgyMDU3Mzg0LCJhdXRob3JpdGllcyI6WyJNYW5hZ2VyIl0sImp0aSI6IjZmNDM2YzQ4LTdkMzItNDBkZS04MWFhLWYwOTkxMjk2MGMxNiIsImNsaWVudF9pZCI6ImNvZGVjbGllbnQifQ.XBbWPct96SYJPcw9InvYO5KJHlTxUHyRw4pnzU-cn0rGBTQ-0tXYuPR54IwQTLgOW3Vq-cemOwqQbe-_nv2L7PLJntAStxGzr7xreyVy7sDy7PBd2K16lyBaFEkLzntipES7pLPjwBbYX-MixNbDPP34Q-n2k-6qBoqfekbaXydhynpP4hKqgOO4DWbE_vTyOVqTq44RQOzzdbcdn9f7ecDefr8OHU4o_uafQVFKmRECTXuIu6OGULoKMQLpFPYoGHZ-3uyUk4zG4Gsu_kZMANoj0vvT5YM_TcYwWyWlQSQOMzL2KMfFyfZ-H3xk6bQvDusgG-bgfpZGo-myvpESOQ";
+//var source=new EventSource(url.concat("?access_token="+"Bearer "+access_token));
+var source=new EventSource(url.concat("?access_token="+access_token));
+//var source=new EventSource(url);
+//var request = new XMLHttpRequest();
+var request ;
+if (window.XMLHttpRequest) {
+	request = new XMLHttpRequest();
+	
+  } else {
+    // code for older browsers
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+request.open("GET", url, true);
+
+//request.setRequestHeader("Authorization", "bearer "+access_token );
+debugger;
+
+//var url = window.location.pathname;
+//var filename = url.substring(url.lastIndexOf('/')+1);
+
+function getQueryStringValue (key) {  
+	  return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+	}  
+
+
+//var es = new EventSource('http://localhost:1337/channels/ticker');
+/* source.onmessage = function(e) {
+    alert(e.data);
+}; */
+//var tenantid=getQueryStringValue("tenantid");
+
+
+//request.send();
+/* request.onreadystatechange  = function() {
+		if (this.readyState == 4 && this.status == 200) {
+	       // Action to be performed when the document is read;
+			console.log(tenantid);
+			source.addEventListener(
+					tenantid,
+			    function(event){
+					console.log(event.data);
+			        console.log(event.lastEventId);
+			        alert("You've got a server event");
+			        document.getElementById("result").innerHTML+=event.data + "<br>"; 
+			       },
+			    false);
+	    }
+	  
+	} */ 
+	 var tenantid=getQueryStringValue("tenantid");
+	console.log(tenantid);
+	source.addEventListener(
+			tenantid,
+	    function(event){
+			console.log(event.data);
+	        alert("You've got a server event");
+	        document.getElementById("result").innerHTML+=event.data + "<br>"; },
+	    false);
+	    
+/* 	source.onerror = function(e) {
+		  alert("EventSource failed.");
+		}; */
+
+ 
+</script>
+</body>
+</html>

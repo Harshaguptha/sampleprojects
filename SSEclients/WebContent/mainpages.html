@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function submiturl(){
+	 var tenantid=document.getElementById("tenantid").value;
+	 var url = "http://localhost:1111/SSEclients/sseclients.html?tenantid="+tenantid;
+	 //var url = "http://localhost:1111/SSEclients/httpsseclient.html?tenantid="+tenantid;
+	 //var url = "http://localhost:1111/SSEclients/localsseclient.html?tenantid="+tenantid;
+	 
+	 window.open(url,"_blank");
+}
+</script>
+</head>
+<body>
+  <input id="tenantid">
+  <button type="button" id="submit" onClick="submiturl()" >Submit</button>
+
+</body>
+</html>

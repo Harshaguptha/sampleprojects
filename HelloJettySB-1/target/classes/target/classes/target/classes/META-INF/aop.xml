@@ -1,0 +1,36 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+	<weaver options="-verbose ">
+		<!-- only weave classes in our application-specific packages -->
+		<include within="com.syn..* "/>
+				
+<!--  <include within="com.syn..*  &amp;&amp; !com.syn.cmn.log.cmn.aj.*  &amp;&amp; !com.syn.cmn.log.cmn.util.*  &amp;&amp;   !com.syn.cmn.appender.*   &amp;&amp; !com.syn.cmn.cmn.mtdt.*  &amp;&amp; !com.syn.cmn.srv.stup.Startup &amp;&amp; !com.syn.cmn.log.srv.gen.*  &amp;&amp; !com.syn.hnd.req.core.*  &amp;&amp; !com.syn.cmn.log.srv.core.*  &amp;&amp; !com.syn.cmn.log.exc.core.*  &amp;&amp; !com.syn.cmn.log.exc.ptn.*  " />
+ -->		
+		<!-- <include com.syn.cmn.log.exc.core
+			    within="com.syncoms..* 
+			&amp;&amp; !com.syn.cmn.log.cmn.util.* 
+			&amp;&amp; !com.syn.cmn.log.exc.core.* 
+			&amp;&amp; !com.syn.cmn.log.exc.ptn.* 
+			&amp;&amp; !com.syn.cmn.log.srv.core.* 
+			&amp;&amp; !com.syn.cmn.log.srv.gen.*
+			&amp;&amp; !com.syn.cmn.log.cmn.util.TransactionTracker
+			-showWeaveInfo" /> -->
+	<!-- 		
+	/*@Pointcut("execution(public * *.*(..)) "
+			+ "&& !within(com.syn.cmn.log.exc.core.*) "
+			+ "&& !within(com.syn.cmn.log.cmn.aj.*) "
+			+ "&& !within(com.syn.cmn.log.exc.ptn.*)  "
+			+ "&& !within(com.syn.cmn.log.srv.core.*)  "
+			+ "&& !within(com.syn.cmn.log.cmn.util.*)  "
+			+ "&& !within(com.syn.cmn.cmn.mtdt.*)  "
+
+			+ "&& !within(com.syn.cmn.log.srv.gen.*)")*/ -->
+			
+	</weaver>
+
+	<aspects>
+		<!-- weave in just this aspect -->
+		<aspect name="com.syn.aj.LogAspect" />
+	</aspects>
+
+</aspectj>

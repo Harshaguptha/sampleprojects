@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Messages Listening....!</title>
+</head>
+<body>
+<h3>Messages Listening....!</h3>
+<p id="result"></p>
+<script type="text/javascript">
+//var url = "rest/broadcast";
+//var url = "rest/jsonbroadcast";
+var url ="http://localhost:1111/SSEKafkaConsumer/rest/jsonbroadcast"
+//var url = "rest/events";
+var source=new EventSource(url);
+debugger;
+//var url = window.location.pathname;
+//var filename = url.substring(url.lastIndexOf('/')+1);
+
+function getQueryStringValue (key) {  
+	  return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+	}  
+
+
+//var es = new EventSource('http://localhost:1337/channels/ticker');
+/* source.onmessage = function(e) {
+    alert(e.data);
+}; */
+var tenantid=getQueryStringValue("tenantid");
+console.log(tenantid);
+source.addEventListener(
+		tenantid,
+    function(event){
+		console.log(event.data);
+        console.log(event.lastEventId);
+        alert("You've got a server event");
+        document.getElementById("result").innerHTML+=event.data + "<br>"; },
+    false);
+    
+
+
+ 
+</script>
+</body>
+</html>
