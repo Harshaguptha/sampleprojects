@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration >
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+   <appender name="A2" class="org.apache.log4j.ConsoleAppender">
+      <layout class="org.apache.log4j.SimpleLayout"/>
+   </appender>
+    <plugin name="CustomDBReceiver" class="org.apache.log4j.db.CustomSQLDBReceiver">
+      <connectionSource class="org.apache.log4j.db.DriverManagerConnectionSource">
+        <param name="password" value="master"/>
+        <param name="user" value="sa"/>
+        <param name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <param name="url" value="jdbc:sqlserver://SERVER2;databaseName=Madhusudhan"/>
+	  </connectionSource>
+      <param name="refreshMillis" value="5000"/>
+      <param name="sql" value='select logger as LOGGER, timestamp as TIMESTAMP, level as LEVEL, thread as THREAD, message as MESSAGE, ndc as NDC, mdc as MDC, class as CLASS, method as METHOD, file as FILE, line as LINE, concat("{{application,databaselogs,hostname,mymachine,log4jid,", DATED, "}}") as PROPERTIES, "" as EXCEPTION from LOG'/> 
+      <param name="IDField" value="DATED"/>
+   </plugin>
+
+
+   <root>
+      <level value="debug"/>
+   </root>
+</log4j:configuration>

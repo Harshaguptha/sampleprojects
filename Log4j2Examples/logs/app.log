@@ -1,0 +1,9 @@
+2015-02-02 11:54:31,438 ERROR c.s.l.FirstException [main] java.lang.ArrayIndexOutOfBoundsException: 3
+2015-02-02 11:55:30,075 ERROR syn.log4j.FirstException [main] java.lang.ArrayIndexOutOfBoundsException: 3
+2015-02-02 11:56:02,873 ERROR com.syn.log4j.FirstException [main] java.lang.ArrayIndexOutOfBoundsException: 3
+2015-02-02 11:56:35,216 INFO com.syn.log4j.FirstException [main] enter in to the try block
+2015-02-02 11:56:35,218 ERROR com.syn.log4j.FirstException [main] java.lang.ArrayIndexOutOfBoundsException: 3
+2015-02-02 12:40:30,784 INFO com.syn.log4j.JDBCAppenderExample [main] I am happy!
+2015-02-02 12:40:30,786 WARN com.syn.log4j.JDBCAppenderExample [main] I am concerned...
+2015-02-02 12:40:30,786 ERROR com.syn.log4j.JDBCAppenderExample [main] I am in trouble, something went wrong.
+2015-02-02 12:40:30,786 DEBUG com.syn.log4j.JDBCAppenderExample [main] I am up, I am down, I am all around!

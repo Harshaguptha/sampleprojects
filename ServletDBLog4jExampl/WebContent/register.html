@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>Register Page</title>
+</head>
+<style > 
+.div {
+    border: 2px solid #a1a1a1;
+    padding: 1px 20px; 
+    background: #F7BE81;
+    width: 350px;
+    border-radius: 25px;
+}
+</style>
+<body style="width: 100%"  bgcolor="#E6E6FA">
+<h2>Please Register in this form</h2>
+	<div class="div" >
+		<h3>Registration Form</h3>
+		<form action="Register" method="post">
+			<fieldset style="border: 0">
+				<table>
+					<tr>
+						<td ><strong>Email
+								ID <span style="color: red">*</span>
+						</strong></td>
+						<td><input type="email"  name="email" required="Required" placeholder="Enter email" /></td>
+					</tr>
+
+					<tr>
+						<td><strong>Password <span style="color: red">*</span></strong>
+						</td>
+						<td><input type="password" name="password" maxlength="20"
+							required="Required" placeholder="*************"></td>
+					</tr>
+
+					<tr>
+						<td><strong>Name <span style="color: red">*</span></strong></td>
+						<td><input type="text" id="username" name="name" required="Required" 
+							placeholder="Enter name"></td>
+							<!-- pattern="[A-Za-z]" -->
+					</tr>
+
+					<tr>
+						<td><strong>Country <span style="color: red">*</span></strong>
+						</td>
+						<td><input type="text" name="country" required="Required"
+							placeholder="Enter country"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Register" >
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	<br> If you are registered user, please
+	<a href="login.html">login</a>.
+	</div>
+</body>
+</html>
+
+
